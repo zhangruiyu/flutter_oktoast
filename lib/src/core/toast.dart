@@ -40,7 +40,7 @@ ToastFuture showToast(
 
   textStyle ??= _ToastTheme.of(context).textStyle ?? TextStyle(fontSize: 15.0);
 
-  textAlign = _ToastTheme.of(context).textAlign;
+  textAlign ??= _ToastTheme.of(context).textAlign;
 
   textPadding ??= _ToastTheme.of(context).textPadding;
 
