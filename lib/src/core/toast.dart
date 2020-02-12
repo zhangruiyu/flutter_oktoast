@@ -4,8 +4,7 @@ import 'dart:async';
 import 'dart:collection';
 import 'dart:ui' as ui;
 
-import 'package:flutter/material.dart' hide Overlay, OverlayEntry;
-import 'package:oktoast/src/widget/overlay.dart';
+import 'package:flutter/material.dart';
 import 'package:oktoast/oktoast.dart';
 
 import 'position.dart';
@@ -25,8 +24,7 @@ const _defaultDuration = Duration(
 );
 
 /// show toast with [msg],
-ToastFuture showToast(
-  String msg, {
+ToastFuture showToast(String msg, {
   BuildContext context,
   Duration duration,
   ToastPosition position,
@@ -56,8 +54,9 @@ ToastFuture showToast(
   Widget widget = Container(
     margin: const EdgeInsets.all(50.0),
     decoration: BoxDecoration(
-      color: backgroundColor,
-      borderRadius: BorderRadius.circular(radius),
+        color: backgroundColor,
+        borderRadius: BorderRadius.circular(radius),
+        boxShadow: theme.boxShadow
     ),
     padding: textPadding,
     child: ClipRect(
@@ -83,8 +82,7 @@ ToastFuture showToast(
 }
 
 /// show [widget] with oktoast
-ToastFuture showToastWidget(
-  Widget widget, {
+ToastFuture showToastWidget(Widget widget, {
   BuildContext context,
   Duration duration,
   ToastPosition position,
